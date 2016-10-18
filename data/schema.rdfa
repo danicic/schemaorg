@@ -428,6 +428,12 @@ See also the &lt;a href=&quot;/docs/hotels.html&quot;&gt;dedicated document on t
        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CreativeWork">CreativeWork</a></span>
     </div>
 
+	<div typeof="rdfs:Class" resource="http://schema.org/SmartCity">
+      <span class="h" property="rdfs:label">SmartCity</span>
+      <span property="rdfs:comment">A SmartCity.</span>
+       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/City">CreativeWork</a></span>
+    </div>
+	
     <div typeof="rdfs:Class" resource="http://schema.org/BookFormatType">
       <span class="h" property="rdfs:label">BookFormatType</span>
       <span property="rdfs:comment">The publication format of the book.</span>
