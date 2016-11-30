@@ -1,0 +1,280 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+  prefix="
+    owl: http://www.w3.org/2002/07/owl#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    xsd: http://www.w3.org/2001/XMLSchema#
+    dct: http://purl.org/dc/terms/
+    schema: http://schema.org/"
+  >
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/totalCapacity">
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSite"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/totalCapacity>"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#integer"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/accidentType">
+    <div rel="rdfs:domain" resource="http://schema.org/Accident"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/parkingName">
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSite"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#string"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSpace"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/parkingNumberOfOccupiedSpaces">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/parkingNumberOfOccupiedSpaces>"></div>
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSpaceStatus"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#integer"></div>
+    <div property="rdfs:label" datatype="xsd:string" content="parking number of occupied spaces"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/TrafficSpeed">
+    <div rel="rdfs:subClassOf" resource="http://schema.org/TrafficData"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/TrafficSpeed>"></div>
+    <div property="rdfs:comment" xml:lang="en" content="Averaged measurements or calculations of traffic speed."></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/latitude">
+    <div rel="rdfs:domain" resource="http://schema.org/GeoCoordinates"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#string"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#decimal"></div>
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/trafficNotificationsCategory">
+    <div property="schema:supersededBy" datatype="xsd:string" content="schema:traffic"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/carTransportation">
+    <div property="schema:supersededBy" datatype="xsd:string" content="schema:transportation"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" datatype="xsd:string" content="A sub-category of tranasporation offerings which relate to car transportation"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/parkingNumberOfVacantSpaces">
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#integer"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/parkingNumberOfVacantSpaces>"></div>
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSiteStatus"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div property="rdfs:label" datatype="xsd:string" content="parking number of vacant spaces"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/parkingSiteStatus">
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSite"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#boolean"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/traffic">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" datatype="xsd:string" content="A category for all the Offerings relating to traffic"></div>
+  </div>
+  <div typeof="owl:Ontology" about="http://schema.org/">
+    <div property="owl:versionInfo" datatype="xsd:string" content="Created with TopBraid Composer"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/parkingSpaceOrGroupIdentifier">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/TravelTimeData">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="rdfs:subClassOf" resource="http://schema.org/Data"></div>
+    <div rel="schema:refersTo">
+      <div typeof="schema:Enumeration" about="http://schema.org/trafficInfoCategory">
+        <div property="rdfs:comment" datatype="xsd:string" content="A sub-category of traffic. All offerings relating to  traffic information can be categorized under TrafficInfoCategory"></div>
+        <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+        <div property="schema:supersededBy" datatype="xsd:string" content="schema:traffic"></div>
+      </div>
+    </div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/TravelTimeData>"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" xml:lang="en" content="Derived/computed travel time information relating to a linear section of the road network; forecast = true means a forecast for a vehicle at the start of the specified location, forecast = false means calculation/measurement at the end."></div>
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/offeringCategory">
+    <div property="schema:supersededBy" datatype="xsd:string" content="schema:parking"></div>
+    <div property="rdfs:comment" datatype="xsd:string" content="Categorization of the offerings"></div>
+    <div property="schema:supersededBy" datatype="xsd:string" content="schema:transportation"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="schema:supersededBy" datatype="xsd:string" content="schema:traffic"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/ParkingSiteAddress">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSite"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="rdfs:range" resource="http://schema.org/PostalAddress"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/parkingLocation">
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSpace"></div>
+    <div rel="rdfs:range" resource="http://schema.org/GeoCoordinates"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/parkingSpaceStatus">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="rdfs:range" resource="http://schema.org/ParkingSpaceStatus"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="rdfs:domain" resource="http://schema.org/ParkingSpace"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/longitude">
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#string"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#decimal"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/location">
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/busTransportation">
+    <div property="schema:supersededBy" datatype="xsd:string" content="schema:transportation"></div>
+    <div property="rdfs:comment" datatype="xsd:string" content="A sub-category of tranasporation offerings which relate to bus transportation"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/Place">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/vehicleInvolved">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="rdfs:domain" resource="http://schema.org/Accident"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/Pollution">
+    <div property="rdfs:comment" xml:lang="en" content="Details of atmospheric pollution."></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/Pollution>"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:refersTo" resource="http://schema.org/trafficInfoCategory"></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div rel="schema:refersTo">
+      <div typeof="schema:Enumeration" about="http://schema.org/environment">
+        <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+        <div property="rdfs:comment" datatype="xsd:string" content="A category for all the Offerings relating to environment"></div>
+        <div property="schema:source" datatype="xsd:string" content="<http://sensormeasurement.appspot.com/m3/Environment>"></div>
+      </div>
+    </div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/source">
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/Destination">
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/Destination>"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" xml:lang="en" content="The specification a destination. This may be either a point location or an area location."></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/GeoShape">
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/parking">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" datatype="xsd:string" content="A category for all the Offerings relating to parking"></div>
+  </div>
+  <div typeof="owl:DatatypeProperty" about="http://schema.org/publicationTime">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/publicationTime>"></div>
+    <div rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#dateTime"></div>
+  </div>
+  <div typeof="schema:Enumeration" about="http://schema.org/transportation">
+    <div property="schema:source" datatype="xsd:string" content="<http://sensormeasurement.appspot.com/m3/Transportation>"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" datatype="xsd:string" content="A category for all the Offerings relating to transportation"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/address">
+    <div rel="rdfs:range" resource="http://schema.org/PostalAddress"></div>
+  </div>
+  <div typeof="rdf:Property" about="http://schema.org/supersededBy">
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/parkingDescription">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:ObjectProperty" about="http://schema.org/refersTo">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/ParkingSiteStatus">
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/TrafficData">
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/TrafficData>"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:refersTo" resource="http://schema.org/trafficInfoCategory"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="rdfs:subClassOf" resource="http://schema.org/Data"></div>
+    <div property="rdfs:comment" xml:lang="en" content="Measured or derived values relating to traffic or individual vehicle movements on a specific section or at a specific point on the road network."></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/Enumeration">
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/ParkingSite">
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div rel="owl:equivalentClass" resource="http://schema.org/ParkingFacility"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/ParkingSite>"></div>
+    <div property="rdfs:comment" xml:lang="en" content="A record containing static details of a parking site. Must be specialised as an 'Urban-' or 'InterUrbanParkingSite' or a 'SpecialLocationParkingSite'."></div>
+    <div rel="schema:refersTo">
+      <div typeof="schema:Enumeration" about="http://schema.org/parkingSiteMgmtCategory">
+        <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+        <div property="schema:supersededBy" datatype="xsd:string" content="schema:parking"></div>
+        <div property="rdfs:comment" xml:lang="en" content="Offerings relating to Parking site can be categorized under ParkingSiteCategory"></div>
+      </div>
+    </div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/Data">
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/BasicData>"></div>
+    <div property="rdfs:comment" xml:lang="en" content="Data that is either measured or calculated (elaborated) at the same time or over the same time period."></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/ParkingSpaceStatus">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/ParkingSpaceStatus>"></div>
+    <div property="rdfs:comment" xml:lang="en" content="Status (occupied or closed) for a single parking space which was defined in the static part of the model."></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/ParkingSpace">
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div property="rdfs:comment" xml:lang="en" content="A single parking space. It is possible to define the same parking space more than once with different properties, e.g. when there is a different parking assignment for different times."></div>
+    <div rel="schema:refersTo">
+      <div typeof="schema:Enumeration" about="http://schema.org/parkingSpaceMgmtCategory">
+        <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+        <div property="rdfs:comment" xml:lang="en" content="A sub-category of Parking, offerings relating to parking space can be categorized under ParkingSpaceCategory"></div>
+        <div property="schema:supersededBy" datatype="xsd:string" content="schema:parking"></div>
+      </div>
+    </div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/ParkingSpace>"></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/TrafficElement">
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/TrafficElement>"></div>
+    <div property="rdfs:comment" xml:lang="en" content="An event which is not planned by the traffic operator, which is affecting, or has the potential to affect traffic flow."></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/Accident">
+    <div rel="dct:source" resource="http://vocab.datex.org/terms"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/Accident>"></div>
+    <div rel="schema:refersTo" resource="http://schema.org/trafficInfoCategory"></div>
+    <div property="rdfs:comment" xml:lang="en" content="Accidents are events where one or more vehicles are involved in collisions or in leaving the roadway. These include collisions between vehicles or with other road users or obstacles."></div>
+    <div rel="rdfs:subClassOf" resource="http://schema.org/TrafficElement"></div>
+    <div rel="schema:isPartOf" resource="http://mobility.schema.org"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/PostalAddress">
+    <div property="rdfs:comment" xml:lang="en" content="Address and contact information about some person, service or the parking site, provided in detail or via reference."></div>
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+    <div property="schema:source" datatype="xsd:string" content="<http://vocab.datex.org/terms/Contact>"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/ParkingFacility">
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+  <div typeof="owl:Class" about="http://schema.org/GeoCoordinates">
+    <div rel="rdfs:subClassOf" resource="http://www.w3.org/2002/07/owl#Thing"></div>
+  </div>
+</div>
+
