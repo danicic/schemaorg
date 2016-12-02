@@ -1,26 +1,49 @@
 <div>
-<!-- Smart city  -->
+<!-- Mobility domain vocabulary  -->
     <div resource="http://mobility.schema.org/">
     </div>
 
-    <div typeof="rdfs:Class" resource="http://mobility.schema.org/SmartCity">
+    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpace">
         <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">SmartCity</span>
-        <span property="rdfs:comment">A SmartCity for testing.</span>
-        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/City">City</a></span>
+        <span class="h" property="rdfs:label">Parking Space</span>
+        <span property="rdfs:comment">A single parking space. It is possible to define the same parking space more than once with different properties, 
+		e.g. when there is a different parking assignment for different times.</span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CivicStructure">CivicStructure</a></span>
     </div>
-    <div typeof="rdfs:Class" resource="http://mobility.schema.org/SmartParking">
-        <link property="http://mobility.schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">SmartParking</span>
-        <span property="rdfs:comment">A SmartParking for testing.</span>
-        <span>Subclass of: <a property="rdfs:subClassOf" href="http://mobility.schema.org/SmartCity">SmartCity</a></span>
+    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpaceOrGroupIdentifier">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">ParkingSpaceOrGroupIdentifier</span>
+        <span property="rdfs:comment">A parking space or group Identifier.</span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/DataType">DataType</a></span>
     </div>	
-    <div typeof="rdf:Property" resource="http://schema.org/availableParkingSpots">
+    <div typeof="rdf:Property" resource="http://schema.org/hasParkingSapceOrGroupIdentifier">
         <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">availableParkingSpots</span>
-        <span property="rdfs:comment">This is a availableParkingSpots! - for testing only</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://mobility.schema.org/">SmartParking</a></span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://mobility.schema.org/SmartParking">SmartParking</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Location">Location</a></span>
+        <span class="h" property="rdfs:label">parkingSapceOrGroupIdentifier</span>
+        <span property="rdfs:comment">A property that relates parking space with parking space identifier</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ParkingSpaceOrGroupIdentifier">ParkingSpaceOrGroupIdentifier</a></span>
+    </div>	
+    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpaceStatus">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">ParkingSpaceStatus</span>
+        <span property="rdfs:comment">Current status of a parking space.</span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/DataType">DataType</a></span>
+    </div>	
+    <div typeof="rdf:Property" resource="http://schema.org/hasParkingSapceStatus">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">hasParkingSapceStatus</span>
+        <span property="rdfs:comment">A property that relates parking space with its current status</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ParkingSpaceStatus">ParkingSpaceStatus</a></span>
     </div>
+    <div typeof="rdfs:Class" resource="http://schema.org/Parking">
+	  <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+      <span class="h" property="rdfs:label">Parking</span>
+      <span property="rdfs:comment">Parking category.</span>
+       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Enumeration">Enumeration</a></span>
+    </div>
+    <div typeof="http://schema.org/Parking" resource="http://schema.org/ParkingSiteMgmtCategory">
+      <span class="h" property="rdfs:label">Parking Site Management Category</span>
+      <span property="rdfs:comment">A category for the offerings relating to parking site management.</span>
+    </div>	
 </div>
