@@ -2,48 +2,124 @@
 <!-- Mobility domain vocabulary  -->
     <div resource="http://mobility.schema.org/">
     </div>
-
+    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSite">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">Parking Site</span>
+        <span property="rdfs:comment">A parking site.</span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ParkingFacility">ParkingFacility</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#ParkingSite">DatexII</a></span>
+    </div>
+    <div typeof="rdf:Property" resource="http://schema.org/parkingSiteStatus">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">parkingSiteStatus</span>
+        <span property="rdfs:comment">The status of the parking site </span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSite">ParkingSite</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ParkingSiteStatus">ParkingSiteStatus</a></span>
+        <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#parkingSiteStatus">DatexII</a></span>
+    </div>	
+    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSiteStatus">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">Parking Site Status</span>
+        <span property="rdfs:comment">Status of a parking site.</span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QuantitativeValue">QuantitativeValue</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#ParkingSiteStatus">DatexII</a></span>
+    </div>	
+    <div typeof="rdf:Property" resource="http://schema.org/parkingNumberOfVacantSpaces">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">parkingNumberOfVacantSpaces</span>
+        <span property="rdfs:comment">parking number of vacant spaces</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSiteStatus">ParkingSiteStatus</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
+        <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#parkingNumberOfVacantSpaces">DatexII</a></span>
+    </div>	
+    <div typeof="rdf:Property" resource="http://schema.org/parkingNumberOfOccupiedSpaces">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">parkingNumberOfOccupiedSpaces</span>
+        <span property="rdfs:comment">parking number of occupied spaces</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSiteStatus">ParkingSiteStatus</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
+        <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#parkingNumberOfOccupiedSpaces">DatexII</a></span>
+    </div>	
+    <div typeof="rdf:Property" resource="http://schema.org/totalCapacity">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">totalCapacity</span>
+        <span property="rdfs:comment">Total number of car parking spaces</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSite">ParkingSite</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
+        <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#totalCapacity">DatexII</a></span>
+    </div>	
     <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpace">
         <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
         <span class="h" property="rdfs:label">Parking Space</span>
         <span property="rdfs:comment">A single parking space. It is possible to define the same parking space more than once with different properties, 
 		e.g. when there is a different parking assignment for different times.</span>
         <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CivicStructure">CivicStructure</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#ParkingSpace">DatexII</a></span>
     </div>
     <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpaceOrGroupIdentifier">
         <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
         <span class="h" property="rdfs:label">ParkingSpaceOrGroupIdentifier</span>
         <span property="rdfs:comment">A parking space or group Identifier.</span>
-        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/DataType">DataType</a></span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QuantitativeValue">QuantitativeValue</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#ParkingSpaceOrGroupIdentifier">DatexII</a></span>
     </div>	
     <div typeof="rdf:Property" resource="http://schema.org/hasParkingSapceOrGroupIdentifier">
         <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
         <span class="h" property="rdfs:label">parkingSapceOrGroupIdentifier</span>
-        <span property="rdfs:comment">A property that relates parking space with parking space identifier</span>
+        <span property="rdfs:comment">A property that relates parking site or space with parking identifier</span>
         <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
+		<span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSite">ParkingSite</a></span>
         <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ParkingSpaceOrGroupIdentifier">ParkingSpaceOrGroupIdentifier</a></span>
-    </div>	
-    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpaceStatus">
+        <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#hasParkingSpaceOrGroupIdentifier">DatexII</a></span>
+	</div>	
+	    <div typeof="rdf:Property" resource="http://schema.org/parkingSpaceStatusTimeStamp">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org"/>
+        <span class="h" property="rdfs:label">parkingSpaceStatusTimeStamp</span>
+        <span property="rdfs:comment">Timestamp when the status of the parking space has last changed</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/DateTime">DateTime</a></span>
+	</div>
+	    <div typeof="rdf:Property" resource="http://schema.org/parkingLocation">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org"/>
+        <span class="h" property="rdfs:label">parkingLocation</span>
+        <span property="rdfs:comment">Location or geo coordinates of a parking space</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/GeoCoordinates">GeoCoordinates</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#parkingLocation">DatexII</a></span>
+	</div>	
+    <div typeof="rdf:Property" resource="http://schema.org/parkingSapceStatus">
         <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">ParkingSpaceStatus</span>
-        <span property="rdfs:comment">Current status of a parking space.</span>
-        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/DataType">DataType</a></span>
-    </div>	
-    <div typeof="rdf:Property" resource="http://schema.org/hasParkingSapceStatus">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">hasParkingSapceStatus</span>
+        <span class="h" property="rdfs:label">parkingSapceStatus</span>
         <span property="rdfs:comment">A property that relates parking space with its current status</span>
         <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
         <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ParkingSpaceStatus">ParkingSpaceStatus</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#parkingSapceStatus">DatexII</a></span>
     </div>
-    <div typeof="rdfs:Class" resource="http://schema.org/Parking">
-	  <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">Parking</span>
-      <span property="rdfs:comment">Parking category.</span>
-       <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Enumeration">Enumeration</a></span>
+    <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpaceStatus">
+	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+      <span class="h" property="rdfs:label">ParkingSpaceStatus</span>
+      <span property="rdfs:comment">Current status of a parking space.</span>
+      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Enumeration">Enumeration</a></span>
+	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#ParkingSapceStatus">DatexII</a></span>
     </div>
-    <div typeof="http://schema.org/Parking" resource="http://schema.org/ParkingSiteMgmtCategory">
-      <span class="h" property="rdfs:label">Parking Site Management Category</span>
-      <span property="rdfs:comment">A category for the offerings relating to parking site management.</span>
+    <div typeof="http://schema.org/ParkingSpaceStatus" resource="http://schema.org/potentialSpaceAppeared">
+      <span class="h" property="rdfs:label">potentialSpaceAppeared</span>
+      <span property="rdfs:comment">potential parking space appeared.</span>
+	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#potentialSpaceAppeared">DatexII</a></span>
     </div>	
+    <div typeof="http://schema.org/ParkingSpaceStatus" resource="http://schema.org/potentialSpaceDisappeared">
+      <span class="h" property="rdfs:label">potentialSpaceDisappeared</span>
+      <span property="rdfs:comment">potential parking space disappeared.</span>
+	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#potentialSpaceDisappeared">DatexII</a></span>
+    </div>	
+    <div typeof="http://schema.org/ParkingSpaceStatus" resource="http://schema.org/occupiedSpaceAppeared">
+      <span class="h" property="rdfs:label">occupiedSpaceAppeared</span>
+      <span property="rdfs:comment">occupied parking space appeared.</span>
+	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#occupiedSpaceAppeared">DatexII</a></span>
+    </div>	
+    <div typeof="http://schema.org/ParkingSpaceStatus" resource="http://schema.org/occupiedSpaceDisappeared">
+      <span class="h" property="rdfs:label">occupiedSpaceDisappeared</span>
+      <span property="rdfs:comment">occupied parking space disappeared.</span>
+	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#occupiedSpaceDisappeared">DatexII</a></span>
+    </div>		
 </div>

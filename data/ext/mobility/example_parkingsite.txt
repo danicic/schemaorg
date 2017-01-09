@@ -1,0 +1,29 @@
+TYPES: ParkingSite
+
+JSON:
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@graph": [
+    {
+      "@type": "ParkingSite",
+	  "hasParkingSapceOrGroupIdentifier": {
+	  "ParkingSpaceOrGroupIdentifier": "BCNPS1001"
+	  },
+      "address": {
+       "@type": "PostalAddress",
+       "addressCountry": "Spain",
+       "postalCode": "08034",
+	   "streetAddress": "Campus Nord, Calle Jordi Girona, 1-3"   
+       },
+	  "totalCapacity": "100",
+	  "parkingSiteStatus": {
+       "@type": "ParkingSiteStatus",
+       "parkingNumberOfOccupiedSpaces": "45",
+       "parkingNumberOfVacantSpaces": "55"
+       }   	  
+  }
+  ]
+}
+</script>

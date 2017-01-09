@@ -1,0 +1,24 @@
+TYPES: ParkingSpace
+
+JSON:
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@graph": [
+    {
+      "@type": "ParkingSpace",
+	  "hasParkingSapceOrGroupIdentifier": {
+	  "ParkingSpaceOrGroupIdentifier": "BCNPS1001_01"
+	  },
+	  "parkingLocation":{
+       "@type": "GeoCoordinates",
+       "latitude": "41.75",
+       "longitude": "59.98"
+      },
+	  "parkingSpaceStatusTimeStamp": "2017-01-04T12:30:00-05:00",
+	  "parkingSpaceStatus": "potentialSpaceAppeared"
+  }
+  ]
+}
+</script>
