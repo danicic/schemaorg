@@ -95,6 +95,14 @@
         <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/ParkingSpaceStatus">ParkingSpaceStatus</a></span>
 		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#parkingSapceStatus">DatexII</a></span>
     </div>
+    <div typeof="rdf:Property" resource="http://schema.org/distanceFromParkingSpace">
+        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
+        <span class="h" property="rdfs:label">distanceFromParkingSpace</span>
+        <span property="rdfs:comment">distance from parking space</span>
+        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/ParkingSpace">ParkingSpace</a></span>
+        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
+		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#distanceFromParkingSpace">DatexII</a></span>
+    </div>	
     <div typeof="rdfs:Class" resource="http://schema.org/ParkingSpaceStatus">
 	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
       <span class="h" property="rdfs:label">ParkingSpaceStatus</span>
