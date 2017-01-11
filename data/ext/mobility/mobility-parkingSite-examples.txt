@@ -1,4 +1,59 @@
-TYPES: ParkingSite
+TYPES: #parkingsite ParkingSite
+
+MICRODATA:
+
+<div>
+  <div itemtype="http://schema.org/ParkingSite" itemscope>
+    <div itemprop="hasParkingSapceOrGroupIdentifier" itemscope>
+      <meta itemprop="http://schema.org/ParkingSpaceOrGroupIdentifier" content="BCNPS1001" />
+    </div>
+    <div itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope>
+      <meta itemprop="postalCode" content="08034" />
+      <meta itemprop="addressCountry" content="Spain" />
+      <meta itemprop="streetAddress" content="Campus Nord, Calle Jordi Girona, 1-3" />
+    </div>
+    <div itemprop="parkingSiteStatus" itemtype="http://schema.org/ParkingSiteStatus" itemscope>
+      <meta itemprop="parkingNumberOfVacantSpaces" content="55" />
+      <meta itemprop="parkingNumberOfOccupiedSpaces" content="45" />
+    </div>
+    <meta itemprop="totalCapacity" content="100" />
+  </div>
+</div>
+
+
+
+RDFA:
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+  prefix="
+    schema: http://schema.org/
+    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#"
+  >
+  <div typeof="schema:ParkingSite">
+    <div rel="schema:parkingSiteStatus">
+      <div typeof="schema:ParkingSiteStatus">
+        <div property="schema:parkingNumberOfOccupiedSpaces" content="45"></div>
+        <div property="schema:parkingNumberOfVacantSpaces" content="55"></div>
+      </div>
+    </div>
+    <div rel="schema:address">
+      <div typeof="schema:PostalAddress">
+        <div property="schema:addressCountry" content="Spain"></div>
+        <div property="schema:streetAddress" content="Campus Nord, Calle Jordi Girona, 1-3"></div>
+        <div property="schema:postalCode" content="08034"></div>
+      </div>
+    </div>
+    <div rel="schema:hasParkingSapceOrGroupIdentifier">
+      <div typeof="rdfs:Resource">
+        <div property="schema:ParkingSpaceOrGroupIdentifier" content="BCNPS1001"></div>
+      </div>
+    </div>
+    <div property="schema:totalCapacity" content="100"></div>
+  </div>
+</div>
+
+
 
 JSON:
 

@@ -6,6 +6,18 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+schema:Environment a rdfs:Class ;
+    rdfs:label "Environment" ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "An Environment category class." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:Parking a rdfs:Class ;
+    rdfs:label "Parking" ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "A Parking category class." ;
+    rdfs:subClassOf schema:Enumeration .
+
 schema:ParkingSite a rdfs:Class ;
     rdfs:label "Parking Site" ;
     dc:source <http://vocab.datex.org/terms#ParkingSite> ;
@@ -28,13 +40,6 @@ schema:ParkingSpace a rdfs:Class ;
 		e.g. when there is a different parking assignment for different times.""";
     rdfs:subClassOf schema:CivicStructure .
 
-schema:ParkingSpaceOrGroupIdentifier a rdfs:Class ;
-    rdfs:label "ParkingSpaceOrGroupIdentifier" ;
-    dc:source <http://vocab.datex.org/terms#ParkingSpaceOrGroupIdentifier> ;
-    schema:isPartOf <http://mobility.schema.org> ;
-    rdfs:comment "A parking space or group Identifier." ;
-    rdfs:subClassOf schema:QuantitativeValue .
-
 schema:ParkingSpaceStatus a rdfs:Class ;
     rdfs:label "ParkingSpaceStatus" ;
     dc:source <http://vocab.datex.org/terms#ParkingSapceStatus> ;
@@ -42,13 +47,46 @@ schema:ParkingSpaceStatus a rdfs:Class ;
     rdfs:comment "Current status of a parking space." ;
     rdfs:subClassOf schema:Enumeration .
 
+schema:Traffic a rdfs:Class ;
+    rdfs:label "Traffic" ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "A Traffic category class." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:Transportation a rdfs:Class ;
+    rdfs:label "Transportation" ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "A Transportation category class." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:busTransportation a schema:Transportation ;
+    rdfs:label "busTransportation" ;
+    rdfs:comment "A sub-category of Transportation to categorize the things relating to bus transportation." .
+
+schema:carTransportation a schema:Transportation ;
+    rdfs:label "carTransportation" ;
+    rdfs:comment "A sub-category of Transportation to categorize the things relating to car transportation." .
+
+schema:distanceFromParkingSpace a rdf:Property ;
+    rdfs:label "distanceFromParkingSpace" ;
+    dc:source <http://vocab.datex.org/terms#distanceFromParkingSpace> ;
+    schema:domainIncludes schema:ParkingSpace ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "distance from parking space" .
+
+schema:environment a schema:Environment ;
+    rdfs:label "traffic" ;
+    rdfs:comment "A environment category." .
+
 schema:hasParkingSapceOrGroupIdentifier a rdf:Property ;
     rdfs:label "parkingSapceOrGroupIdentifier" ;
-    dc:source <http://vocab.datex.org/terms#hasParkingSpaceOrGroupIdentifier> ;
+    dc:source <http://vocab.datex.org/terms#parkingSpaceOrGroupIdentifier> ;
     schema:domainIncludes schema:ParkingSite,
         schema:ParkingSpace ;
     schema:isPartOf <http://mobility.schema.org> ;
-    schema:rangeIncludes schema:ParkingSpaceOrGroupIdentifier ;
+    schema:rangeIncludes schema:Text,
+        schema:Url ;
     rdfs:comment "A property that relates parking site or space with parking identifier" .
 
 schema:occupiedSpaceAppeared a schema:ParkingSpaceStatus ;
@@ -60,6 +98,10 @@ schema:occupiedSpaceDisappeared a schema:ParkingSpaceStatus ;
     rdfs:label "occupiedSpaceDisappeared" ;
     dc:source <http://vocab.datex.org/terms#occupiedSpaceDisappeared> ;
     rdfs:comment "occupied parking space disappeared." .
+
+schema:parking a schema:Parking ;
+    rdfs:label "parking" ;
+    rdfs:comment "A parking category." .
 
 schema:parkingLocation a rdf:Property ;
     rdfs:label "parkingLocation" ;
@@ -93,6 +135,10 @@ schema:parkingSapceStatus a rdf:Property ;
     schema:rangeIncludes schema:ParkingSpaceStatus ;
     rdfs:comment "A property that relates parking space with its current status" .
 
+schema:parkingSiteMgmtCategory a schema:Parking ;
+    rdfs:label "parkingSiteMgmtCategory" ;
+    rdfs:comment "A sub-category of Parking to categorize the things relating to parking site management." .
+
 schema:parkingSiteStatus a rdf:Property ;
     rdfs:label "parkingSiteStatus" ;
     dc:source <http://vocab.datex.org/terms#parkingSiteStatus> ;
@@ -100,6 +146,10 @@ schema:parkingSiteStatus a rdf:Property ;
     schema:isPartOf <http://mobility.schema.org> ;
     schema:rangeIncludes schema:ParkingSiteStatus ;
     rdfs:comment "The status of the parking site " .
+
+schema:parkingSpaceMgmtCategory a schema:Parking ;
+    rdfs:label "parkingSpaceMgmtCategory" ;
+    rdfs:comment "A sub-category of Parking to categorize the things relating to parking space management." .
 
 schema:parkingSpaceStatusTimeStamp a rdf:Property ;
     rdfs:label "parkingSpaceStatusTimeStamp" ;
@@ -126,3 +176,18 @@ schema:totalCapacity a rdf:Property ;
     schema:rangeIncludes schema:Number ;
     rdfs:comment "Total number of car parking spaces" .
 
+schema:traffic a schema:Traffic ;
+    rdfs:label "traffic" ;
+    rdfs:comment "A traffic category." .
+
+schema:trafficInformationCategory a schema:Traffic ;
+    rdfs:label "trafficInformationCategory" ;
+    rdfs:comment "A sub-category of Traffic to categorize the things relating to bus traffic information." .
+
+schema:trafficMonitoringCategory a schema:Traffic ;
+    rdfs:label "trafficMonitoringCategory" ;
+    rdfs:comment "A sub-category of Traffic to categorize the things relating to Traffic monitoring." .
+
+schema:transportation a schema:Transportation ;
+    rdfs:label "transportation" ;
+    rdfs:comment "A transportation category." .

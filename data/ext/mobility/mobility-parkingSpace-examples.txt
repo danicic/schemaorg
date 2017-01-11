@@ -1,4 +1,50 @@
-TYPES: ParkingSpace
+TYPES: #parkingspace ParkingSpace
+
+
+MICRODATA:
+
+<div>
+  <div itemtype="http://schema.org/ParkingSpace" itemscope>
+    <meta itemprop="parkingSpaceStatus" content="potentialSpaceAppeared" />
+    <div itemprop="parkingLocation" itemtype="http://schema.org/GeoCoordinates" itemscope>
+      <meta itemprop="latitude" content="41.75" />
+      <meta itemprop="longitude" content="59.98" />
+    </div>
+    <div itemprop="hasParkingSapceOrGroupIdentifier" itemscope>
+      <meta itemprop="http://schema.org/ParkingSpaceOrGroupIdentifier" content="BCNPS1001_01" />
+    </div>
+    <meta itemprop="parkingSpaceStatusTimeStamp" content="2017-01-04T12:30:00-05:00" />
+  </div>
+</div>
+
+
+
+RDFA:
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+  prefix="
+    schema: http://schema.org/
+    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#"
+  >
+  <div typeof="schema:ParkingSpace">
+    <div property="schema:parkingSpaceStatus" content="potentialSpaceAppeared"></div>
+    <div rel="schema:parkingLocation">
+      <div typeof="schema:GeoCoordinates">
+        <div property="schema:latitude" content="41.75"></div>
+        <div property="schema:longitude" content="59.98"></div>
+      </div>
+    </div>
+    <div property="schema:parkingSpaceStatusTimeStamp" content="2017-01-04T12:30:00-05:00"></div>
+    <div rel="schema:hasParkingSapceOrGroupIdentifier">
+      <div typeof="rdfs:Resource">
+        <div property="schema:ParkingSpaceOrGroupIdentifier" content="BCNPS1001_01"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 JSON:
 
