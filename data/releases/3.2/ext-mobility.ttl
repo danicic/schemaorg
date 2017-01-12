@@ -38,7 +38,7 @@ schema:ParkingSpace a rdfs:Class ;
     schema:isPartOf <http://mobility.schema.org> ;
     rdfs:comment """A single parking space. It is possible to define the same parking space more than once with different properties, 
 		e.g. when there is a different parking assignment for different times.""";
-    rdfs:subClassOf schema:CivicStructure .
+    rdfs:subClassOf schema:ParkingFacility .
 
 schema:ParkingSpaceStatus a rdfs:Class ;
     rdfs:label "ParkingSpaceStatus" ;
@@ -191,3 +191,4 @@ schema:trafficMonitoringCategory a schema:Traffic ;
 schema:transportation a schema:Transportation ;
     rdfs:label "transportation" ;
     rdfs:comment "A transportation category." .
+
