@@ -117,7 +117,7 @@
         <span class="h" property="rdfs:label">Parking Space</span>
         <span property="rdfs:comment">A single parking space. It is possible to define the same parking space more than once with different properties, 
 		e.g. when there is a different parking assignment for different times.</span>
-        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/CivicStructure">CivicStructure</a></span>
+        <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/ParkingFacility">ParkingFacility</a></span>
 		<span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#ParkingSpace">DatexII</a></span>
     </div>	
     <div typeof="rdf:Property" resource="http://schema.org/hasParkingSapceOrGroupIdentifier">
