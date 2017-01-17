@@ -1,4 +1,4 @@
- TYPES: ParkingSite
+TYPES: ParkingSpace
 
 PRE-MARKUP:
 
@@ -73,4 +73,3 @@ JSON:
 }]   
 }
 </script>
-

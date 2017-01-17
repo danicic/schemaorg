@@ -12,11 +12,11 @@
       <span class="h" property="rdfs:label">parking</span>
       <span property="rdfs:comment">A parking category.</span>
     </div>
-    <div typeof="http://schema.org/Parking" resource="http://schema.org/parkingSiteManagement">
+    <div typeof="http://schema.org/Parking" resource="http://schema.org/parkingSiteMgmtCategory">
       <span class="h" property="rdfs:label">parkingSiteMgmtCategory</span>
       <span property="rdfs:comment">A sub-category of Parking to categorize the things relating to parking site management.</span>
     </div>
-    <div typeof="http://schema.org/Parking" resource="http://schema.org/parkingSpaceManagement">
+    <div typeof="http://schema.org/Parking" resource="http://schema.org/parkingSpaceMgmtCategory">
       <span class="h" property="rdfs:label">parkingSpaceMgmtCategory</span>
       <span property="rdfs:comment">A sub-category of Parking to categorize the things relating to parking space management.</span>
     </div>	
@@ -48,11 +48,11 @@
       <span class="h" property="rdfs:label">traffic</span>
       <span property="rdfs:comment">A traffic category.</span>
     </div>
-    <div typeof="http://schema.org/Traffic" resource="http://schema.org/trafficInformation">
+    <div typeof="http://schema.org/Traffic" resource="http://schema.org/trafficInformationCategory">
       <span class="h" property="rdfs:label">trafficInformationCategory</span>
       <span property="rdfs:comment">A sub-category of Traffic to categorize the things relating to bus traffic information.</span>
     </div>
-    <div typeof="http://schema.org/Traffic" resource="http://schema.org/trafficMonitoring">
+    <div typeof="http://schema.org/Traffic" resource="http://schema.org/trafficMonitoringCategory">
       <span class="h" property="rdfs:label">trafficMonitoringCategory</span>
       <span property="rdfs:comment">A sub-category of Traffic to categorize the things relating to Traffic monitoring.</span>
     </div>
@@ -187,96 +187,5 @@
       <span class="h" property="rdfs:label">occupiedSpaceDisappeared</span>
       <span property="rdfs:comment">occupied parking space disappeared.</span>
 	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#occupiedSpaceDisappeared">DatexII</a></span>
-    </div>
-    <div typeof="rdfs:Class" resource="http://schema.org/TpegAreaLocation">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">tpeg area location</span>
-      <span property="rdfs:comment">A geographic or geometric area defined by a TPEG-Loc structure which may include height information for additional geospatial discrimination.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Thing">Thing</a></span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#TpegAreaLocation">DatexII</a></span>
-    </div>
-    <div typeof="rdfs:Class" resource="http://schema.org/TpegGeometricArea">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">TpegGeometricArea</span>
-      <span property="rdfs:comment">A geometric area defined by a centre point and a radius.</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TpegAreaLocation">TpegAreaLocation</a></span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#TpegGeometricArea">DatexII</a></span>
     </div>		
-    <div typeof="rdf:Property" resource="http://schema.org/tpegAreaDescriptor">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">tpegAreaDescriptor</span>
-        <span property="rdfs:comment">Name of area.</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TpegGeometricArea">TpegGeometricArea</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Text">Text</a></span>
-    </div>	
-    <div typeof="rdf:Property" resource="http://schema.org/hasGeoShape">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">hasGeoShape</span>
-        <span property="rdfs:comment">Geoshape of the TpegGeometricArea.</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TpegGeometricArea">TpegGeometricArea</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/GeoCircle">GeoCircle</a></span>
-    </div>
-    <div typeof="rdfs:Class" resource="http://schema.org/TpegLinearLocation">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">tpeg linear location</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/Thing">Thing</a></span>
-      <span property="rdfs:comment">A linear section along a single road defined between two points on the same road by a TPEG-Loc structure.</span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#TpegLinearLocation">DatexII</a></span>
-    </div>	
-    <div typeof="rdf:Property" resource="http://schema.org/to">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">to</span>
-        <span property="rdfs:comment">The location at the down stream end of the section of road which frames the TPEGFramedPoint.</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TpegLinearLocation">TpegLinearLocation</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/GeoCoordinates">GeoCoordinates</a></span>
-    </div>
-    <div typeof="rdf:Property" resource="http://schema.org/from">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">from</span>
-        <span property="rdfs:comment">The location at the up stream end of the section of road which frames the TPEGFramedPoint.</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TpegLinearLocation">TpegLinearLocation</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/GeoCoordinates">GeoCoordinates</a></span>
-    </div>	
-    <div typeof="rdfs:Class" resource="http://schema.org/BasicData">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">BasicData</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/QuantitativeValue">QuantitativeValue</a></span>
-      <span property="rdfs:comment">Data that is either measured or calculated (elaborated) at the same time or over the same time period. </span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#BasicData">DatexII</a></span>
-    </div>	
-    <div typeof="rdfs:Class" resource="http://schema.org/TrafficData">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">TrafficData</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BasicData">BasicData</a></span>
-      <span property="rdfs:comment">Measured or derived values relating to traffic or individual vehicle movements on a specific section or at a specific point on the road network.</span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#TrafficData">DatexII</a></span>
-    </div>
-    <div typeof="rdfs:Class" resource="http://schema.org/TrafficSpeed">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">TrafficSpeed</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/TrafficData">TrafficData</a></span>
-      <span property="rdfs:comment">Averaged measurements or calculations of traffic speed.</span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#TrafficSpeed">DatexII</a></span>
-    </div>	
-    <div typeof="rdfs:Class" resource="http://schema.org/TravelTimeData">
-	<link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-      <span class="h" property="rdfs:label">TravelTimeData</span>
-      <span>Subclass of: <a property="rdfs:subClassOf" href="http://schema.org/BasicData">BasicData</a></span>
-      <span property="rdfs:comment">Derived/computed travel time information relating to a linear section of the road network; forecast = true means a forecast for a vehicle at the start of the specified location, forecast = false means calculation/measurement at the end.</span>
-	  <span>Source:  <a property="dc:source" href="http://vocab.datex.org/terms#TravelTimeData">DatexII</a></span>
-    </div>	
-    <div typeof="rdf:Property" resource="http://schema.org/speed">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">traffic speed</span>
-        <span property="rdfs:comment">A value of speed expressed in kilometres per hour.</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TrafficSpeed">TrafficSpeed</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Number">Number</a></span>
-    </div>	
-    <div typeof="rdf:Property" resource="http://schema.org/travelTime">
-        <link property="http://schema.org/isPartOf" href="http://mobility.schema.org" />
-        <span class="h" property="rdfs:label">travel time</span>
-        <span property="rdfs:comment">Derived/computed travel time information relating to a specific group of locations.</span>
-        <span>Domain: <a property="http://schema.org/domainIncludes" href="http://schema.org/TravelTimeData">TravelTimeData</a></span>
-        <span>Range: <a property="http://schema.org/rangeIncludes" href="http://schema.org/Time">Time</a></span>
-    </div>	
 </div>

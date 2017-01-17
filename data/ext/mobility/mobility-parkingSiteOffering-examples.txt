@@ -1,0 +1,40 @@
+ TYPES: ParkingSite, ParkingSpaceStatus, ParkingSpaceStatus, parkingSiteManagement
+
+PRE-MARKUP:
+
+This example shows how to semantically annotate a Parking site offering.
+
+MICRODATA:
+
+This example exists only in JSON.
+
+RDFA:
+
+This example exists only in JSON.
+
+JSON:
+
+<script type="application/ld+json">
+{
+"@context": {"schema": "http://schema.org/"},
+   "@graph": [
+    {
+     "name": "Parking Spot Availability Service",
+     "@type": "offering",
+     "schema:category": "schema:parkingSiteManagement",
+     "providerId": "1452fwr",
+  "inputData": [
+    { "name": "longitude", "valueType": "number","rdfType":"schema:longitude" },
+    { "name": "latitude", "valueType": "number","rdfType":"schema:latitude" },
+    { "name": "radius", "valueType": "number","rdfType":"schema:geoRadius" }
+  ],
+  "outputData": [   
+    { "name": "latitude", "valueType": "number","rdfType":"schema:latitude" },
+    { "name": "longitude", "valueType": "number","rdfType":"schema:longitude" },
+    { "name": "status", "valueType": "string", "rdfType":"schema:ParkingSpaceStatus"},
+    { "name": "distance", "valueType": "number", "rdfType": "schema:ParkingSpaceStatus"}
+  ]
+}]   
+}
+</script>
+

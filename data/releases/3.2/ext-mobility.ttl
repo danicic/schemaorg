@@ -1,10 +1,17 @@
-@prefix dc: <http://purl.org/dc/terms/> .
+ @prefix dc: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:BasicData a rdfs:Class ;
+    rdfs:label "BasicData" ;
+    dc:source <http://vocab.datex.org/terms#BasicData> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "Data that is either measured or calculated (elaborated) at the same time or over the same time period. " ;
+    rdfs:subClassOf schema:QuantitativeValue .
 
 schema:Environment a rdfs:Class ;
     rdfs:label "Environment" ;
@@ -47,17 +54,59 @@ schema:ParkingSpaceStatus a rdfs:Class ;
     rdfs:comment "Current status of a parking space." ;
     rdfs:subClassOf schema:Enumeration .
 
+schema:TpegAreaLocation a rdfs:Class ;
+    rdfs:label "tpeg area location" ;
+    dc:source <http://vocab.datex.org/terms#TpegAreaLocation> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "A geographic or geometric area defined by a TPEG-Loc structure which may include height information for additional geospatial discrimination." ;
+    rdfs:subClassOf schema:Thing .
+
+schema:TpegGeometricArea a rdfs:Class ;
+    rdfs:label "TpegGeometricArea" ;
+    dc:source <http://vocab.datex.org/terms#TpegGeometricArea> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "A geometric area defined by a centre point and a radius." ;
+    rdfs:subClassOf schema:TpegAreaLocation .
+
+schema:TpegLinearLocation a rdfs:Class ;
+    rdfs:label "tpeg linear location" ;
+    dc:source <http://vocab.datex.org/terms#TpegLinearLocation> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "A linear section along a single road defined between two points on the same road by a TPEG-Loc structure." ;
+    rdfs:subClassOf schema:Thing .
+
 schema:Traffic a rdfs:Class ;
     rdfs:label "Traffic" ;
     schema:isPartOf <http://mobility.schema.org> ;
     rdfs:comment "A Traffic category class." ;
     rdfs:subClassOf schema:Enumeration .
 
+schema:TrafficData a rdfs:Class ;
+    rdfs:label "TrafficData" ;
+    dc:source <http://vocab.datex.org/terms#TrafficData> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "Measured or derived values relating to traffic or individual vehicle movements on a specific section or at a specific point on the road network." ;
+    rdfs:subClassOf schema:BasicData .
+
+schema:TrafficSpeed a rdfs:Class ;
+    rdfs:label "TrafficSpeed" ;
+    dc:source <http://vocab.datex.org/terms#TrafficSpeed> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "Averaged measurements or calculations of traffic speed." ;
+    rdfs:subClassOf schema:TrafficData .
+
 schema:Transportation a rdfs:Class ;
     rdfs:label "Transportation" ;
     schema:isPartOf <http://mobility.schema.org> ;
     rdfs:comment "A Transportation category class." ;
     rdfs:subClassOf schema:Enumeration .
+
+schema:TravelTimeData a rdfs:Class ;
+    rdfs:label "TravelTimeData" ;
+    dc:source <http://vocab.datex.org/terms#TravelTimeData> ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    rdfs:comment "Derived/computed travel time information relating to a linear section of the road network; forecast = true means a forecast for a vehicle at the start of the specified location, forecast = false means calculation/measurement at the end." ;
+    rdfs:subClassOf schema:BasicData .
 
 schema:busTransportation a schema:Transportation ;
     rdfs:label "busTransportation" ;
@@ -78,6 +127,20 @@ schema:distanceFromParkingSpace a rdf:Property ;
 schema:environment a schema:Environment ;
     rdfs:label "traffic" ;
     rdfs:comment "A environment category." .
+
+schema:from a rdf:Property ;
+    rdfs:label "from" ;
+    schema:domainIncludes schema:TpegLinearLocation ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:GeoCoordinates ;
+    rdfs:comment "The location at the up stream end of the section of road which frames the TPEGFramedPoint." .
+
+schema:hasGeoShape a rdf:Property ;
+    rdfs:label "hasGeoShape" ;
+    schema:domainIncludes schema:TpegGeometricArea ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:GeoCircle ;
+    rdfs:comment "Geoshape of the TpegGeometricArea." .
 
 schema:hasParkingSapceOrGroupIdentifier a rdf:Property ;
     rdfs:label "parkingSapceOrGroupIdentifier" ;
@@ -135,7 +198,7 @@ schema:parkingSapceStatus a rdf:Property ;
     schema:rangeIncludes schema:ParkingSpaceStatus ;
     rdfs:comment "A property that relates parking space with its current status" .
 
-schema:parkingSiteMgmtCategory a schema:Parking ;
+schema:parkingSiteManagement a schema:Parking ;
     rdfs:label "parkingSiteMgmtCategory" ;
     rdfs:comment "A sub-category of Parking to categorize the things relating to parking site management." .
 
@@ -147,7 +210,7 @@ schema:parkingSiteStatus a rdf:Property ;
     schema:rangeIncludes schema:ParkingSiteStatus ;
     rdfs:comment "The status of the parking site " .
 
-schema:parkingSpaceMgmtCategory a schema:Parking ;
+schema:parkingSpaceManagement a schema:Parking ;
     rdfs:label "parkingSpaceMgmtCategory" ;
     rdfs:comment "A sub-category of Parking to categorize the things relating to parking space management." .
 
@@ -168,6 +231,20 @@ schema:potentialSpaceDisappeared a schema:ParkingSpaceStatus ;
     dc:source <http://vocab.datex.org/terms#potentialSpaceDisappeared> ;
     rdfs:comment "potential parking space disappeared." .
 
+schema:speed a rdf:Property ;
+    rdfs:label "traffic speed" ;
+    schema:domainIncludes schema:TrafficSpeed ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "A value of speed expressed in kilometres per hour." .
+
+schema:to a rdf:Property ;
+    rdfs:label "to" ;
+    schema:domainIncludes schema:TpegLinearLocation ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:GeoCoordinates ;
+    rdfs:comment "The location at the down stream end of the section of road which frames the TPEGFramedPoint." .
+
 schema:totalCapacity a rdf:Property ;
     rdfs:label "totalCapacity" ;
     dc:source <http://vocab.datex.org/terms#totalCapacity> ;
@@ -176,19 +253,34 @@ schema:totalCapacity a rdf:Property ;
     schema:rangeIncludes schema:Number ;
     rdfs:comment "Total number of car parking spaces" .
 
+schema:tpegAreaDescriptor a rdf:Property ;
+    rdfs:label "tpegAreaDescriptor" ;
+    schema:domainIncludes schema:TpegGeometricArea ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Name of area." .
+
 schema:traffic a schema:Traffic ;
     rdfs:label "traffic" ;
     rdfs:comment "A traffic category." .
 
-schema:trafficInformationCategory a schema:Traffic ;
+schema:trafficInformation a schema:Traffic ;
     rdfs:label "trafficInformationCategory" ;
     rdfs:comment "A sub-category of Traffic to categorize the things relating to bus traffic information." .
 
-schema:trafficMonitoringCategory a schema:Traffic ;
+schema:trafficMonitoring a schema:Traffic ;
     rdfs:label "trafficMonitoringCategory" ;
     rdfs:comment "A sub-category of Traffic to categorize the things relating to Traffic monitoring." .
 
 schema:transportation a schema:Transportation ;
     rdfs:label "transportation" ;
     rdfs:comment "A transportation category." .
+
+schema:travelTime a rdf:Property ;
+    rdfs:label "travel time" ;
+    schema:domainIncludes schema:TravelTimeData ;
+    schema:isPartOf <http://mobility.schema.org> ;
+    schema:rangeIncludes schema:Time ;
+    rdfs:comment "Derived/computed travel time information relating to a specific group of locations." .
+
 
